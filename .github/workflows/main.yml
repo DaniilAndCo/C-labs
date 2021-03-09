@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: compiling and testing
+    - name: build and test
       run: |
         for d in */ ; do
         cd "$d"
