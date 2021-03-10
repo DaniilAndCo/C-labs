@@ -120,30 +120,44 @@ int main() {
     int manageVar = 0;
     int firstNumber_0 = 0, firstNumber_1 = 0;
     int secondNumber_0 = 0, secondNumber_1 = 0;
+    bool isInputed = false;
     bool flag = true;
     while (manageVar != 9 && flag) {
         CorrectInputINT( & manageVar);
         switch (manageVar) {
         case 1:
             EnterValues(ARGUMENTS_0);
+            isInputed = true;
             break;
         case 2:
-            ShowValues(ARGUMENTS_0);
+            if (isInputed)
+                ShowValues(ARGUMENTS_0);
+            printf("Empty data!\n");
             break;
         case 3:
-            ShowSum(ARGUMENTS_0);
+            if (isInputed)
+                ShowSum(ARGUMENTS_0);
+            printf("Empty data!\n");
             break;
         case 4:
-            ShowSubstract(ARGUMENTS_0);
+            if (isInputed)
+                ShowSubstract(ARGUMENTS_0);
+            printf("Empty data!\n");
             break;
         case 5:
-            ShowMultiplying(ARGUMENTS_0);
+            if (isInputed)
+                ShowMultiplying(ARGUMENTS_0);
+            printf("Empty data!\n");
             break;
         case 6:
-            ShowDivision(ARGUMENTS_0);
+            if (isInputed)
+                ShowDivision(ARGUMENTS_0);
+            printf("Empty data!\n");
             break;
         case 7:
-            ShowAverageGarmonic(ARGUMENTS_0);
+            if (isInputed && (firstNumber_0 != 0 || secondNumber_0 != 0))
+                ShowAverageGarmonic(ARGUMENTS_0);
+            else printf("Empty data or invalid data!\n");
             break;
         case 8:
             ShowInfo();
