@@ -1,2 +1,3 @@
 # outputs
-/*/bin/
+!bin/
+bin/*
