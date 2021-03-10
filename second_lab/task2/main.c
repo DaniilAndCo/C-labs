@@ -37,6 +37,11 @@ double* MySin(const double* x, const double* inf)
     double x_ = *x;
     x_ -= (int)(x_ / (2 * pi)) * 2 * pi;
     double* answer = (double*)malloc(2 * sizeof(double));
+    if (!answer)
+    {
+        printf("Insufficiency of memory\n");
+        exit(0);
+    }
     answer[0] = answer[1] = 0;
     double exactValue = sin(x_);
     int i = 0;
