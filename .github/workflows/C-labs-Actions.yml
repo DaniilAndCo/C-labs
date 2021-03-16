@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - name: Print Message
-       run: echo "it works"
+    - uses: actions/checkout@v2
+    - name: compile and test
+      working-directory: ./first_lab
+      run: make Makefile all
         
