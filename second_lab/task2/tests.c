@@ -10,14 +10,14 @@ void testFactorial(){
     return;
 }
 void testMySin(){
-    double x = 0.25, inf = 0.01;
-    assert(fabs(MySin(&x, &inf)[0] - sin(x)) < inf);
-    x = 0.14, inf = 0.014;
-    assert(fabs(MySin(&x, &inf)[0] - sin(x)) < inf);
-    x = 0.256, inf = 0.0256;
-    assert(fabs(MySin(&x, &inf)[0] - sin(x)) < inf);
-    x = -25, inf = 0.002;
-    assert(fabs(MySin(&x, &inf)[0] - sin(x)) < inf);
+    double x = 0.25, eps = 0.01;
+    assert(fabs(MySin(&x, &eps)[0] - sin(x)) < eps);
+    x = 0.14, eps = 0.014;
+    assert(fabs(MySin(&x, &eps)[0] - sin(x)) < eps);
+    x = 0.256, eps = 0.0256;
+    assert(fabs(MySin(&x, &eps)[0] - sin(x)) < eps);
+    x = -25, eps = 0.002;
+    assert(fabs(MySin(&x, &eps)[0] - sin(x)) < eps);
     return;
 }
 

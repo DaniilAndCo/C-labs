@@ -62,7 +62,7 @@ int main()
     CorrectInputLF(&inf);
     double exactValue = sin(x);
     double approximateValue = MySin(&x, &inf)[0];
-    printf("exact value => %lfour value => %lf\n", exactValue, approximateValue);
+    printf("exact value => %lf\nour value => %lf\n", exactValue, approximateValue);
     printf("convergence check with inf = 0.001\n");
     x = -2 * pi;
     inf = 0.001;
