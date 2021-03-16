@@ -21,4 +21,8 @@ jobs:
     - name: compile and test
       working-directory: ./first_lab
       run: make Makefile all
+    - uses: actions/checkout@v2
+    - name: compile and test
+      working-directory: ./second_lab
+      run: make Makefile all	
         
