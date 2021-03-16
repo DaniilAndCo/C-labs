@@ -13,7 +13,7 @@ on:
         - main
 
 jobs:
-  build:
+  build first lab:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,3 +21,12 @@ jobs:
     - name: compile and test
       working-directory: ./first_lab
       run: make Makefile all
+  build second lab:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: compile and test
+      working-directory: ./second_lab
+      run: make Makefile all      
+      
