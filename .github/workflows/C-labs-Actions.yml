@@ -13,21 +13,16 @@ on:
         - main
 
 jobs:
-  build first lab:
+  build:
+
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: compile and test
-      working-directory: ./first_lab
-      run: make Makefile all
-      
-  build second lab:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: compile and test
-      working-directory: ./second_lab
-      run: make Makefile all      
-      
+    - name: compiling and testing
+      run: |
+        for d in */ ; do
+        cd "$d"
+        make all
+        cd ..
+        done
