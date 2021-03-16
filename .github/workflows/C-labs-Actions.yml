@@ -21,6 +21,7 @@ jobs:
     - name: compile and test
       working-directory: ./first_lab
       run: make Makefile all
+      
   build second lab:
     runs-on: ubuntu-latest
 
