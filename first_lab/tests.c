@@ -18,8 +18,8 @@ void testConcat(){
 }
 #undef main
 
-void main(){
+int main(){
     testCreateBinaryNumber();
     testConcat();
-    return;
+    return 0;
 }
