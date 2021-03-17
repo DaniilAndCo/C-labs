@@ -23,6 +23,6 @@ jobs:
       run: |
         for d in */ ; do
         cd "$d"
-        make all
+        make
         cd ..
         done
