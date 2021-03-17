@@ -32,7 +32,7 @@ void testDivision(){
     return;
 }
 void testAverage(){
-    assert(fabs(fabsAverageGarmonic(1, 1) - 1) < eps);
+    assert(fabs(AverageGarmonic(1, 1) - 1) < eps);
     assert(fabs(AverageGarmonic(3, 6) - 4) < eps);
     assert(fabs(AverageGarmonic(1.5, 1.5) - 1.5) < eps);
     assert(fabs(AverageGarmonic(36, 12) - 18) < eps);
