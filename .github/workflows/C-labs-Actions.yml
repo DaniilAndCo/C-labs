@@ -20,5 +20,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: compiling and testing
-      working-directory: ./second_lab/task2
+      working-directory: ./first_lab
       run: make Makefile all
