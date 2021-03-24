@@ -2,11 +2,11 @@ all: Clean BuildMain BuildTests RunTests
 
 BuildMain:
 	mkdir -p bin/program
-	gcc -std=c89 -o bin/program/main main.c
+	gcc -std=c89 -o bin/program/main main.c -lm
 
 BuildTests:
 	mkdir -p bin/tests
-	gcc -std=c89 -o bin/tests/tests -Dmain=_main main.c tests.c
+	gcc -std=c89 -o bin/tests/tests -Dmain=_main main.c tests.c -lm
 
 RunProgram:
 	./bin/program/main
