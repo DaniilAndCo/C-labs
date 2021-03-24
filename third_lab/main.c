@@ -31,7 +31,16 @@ struct Data
 };
 struct Data* CreateArr(unsigned int* n)
 {
-    return (struct Data*)malloc(*n * sizeof(struct Data));
+    struct Data* arr = (struct Data*)malloc(*n * sizeof(struct Data));
+    if (arr)
+    {
+        return arr;
+    }
+    else
+    {
+        printf("Insufficiency of memory\n");
+        exit(0);
+    }
 }
 double CalculateWaterFlow(unsigned int* h, unsigned int* s, unsigned int* v)
 {
