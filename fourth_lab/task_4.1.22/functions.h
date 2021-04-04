@@ -1,7 +1,7 @@
 #ifndef _FUNCTIONS_H_
 #define _FUNCTIONS_H_
 
-#include <curses.h>
+#include <conio.h>
 #include <stdio.h>
 #include <malloc.h>
 #include <stdlib.h>
