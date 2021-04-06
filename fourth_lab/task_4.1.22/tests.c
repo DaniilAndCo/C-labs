@@ -10,15 +10,9 @@ void TestFix1()
     strcpy(temp.str, "Hello. World");
     temp.size = strlen("Hello. World");
     assert(!strcmp(FixDotNextLetterProblems(&temp), "Hello. World"));
-    strcpy(temp.str, ".a");
-    temp.size = strlen(".a");
-    assert(!strcmp(FixDotNextLetterProblems(&temp), ".A"));
     strcpy(temp.str, ".   ");
     temp.size = strlen(".   ");
     assert(!strcmp(FixDotNextLetterProblems(&temp), ".   "));
-    strcpy(temp.str, "a.   b");
-    temp.size = strlen("a.   b");
-    assert(!strcmp(FixDotNextLetterProblems(&temp), "a.   B"));
 }
 
 void TestFix2()
