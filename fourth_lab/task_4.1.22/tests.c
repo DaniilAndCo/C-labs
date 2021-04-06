@@ -3,20 +3,23 @@
 #include <string.h>
 #undef main
 
-struct string temp;
-
 void TestFix1()
 {
+    struct string temp;
+    SetString(&temp);
     strcpy(temp.str, "Hello. World");
     temp.size = strlen("Hello. World");
     assert(!strcmp(FixDotNextLetterProblems(&temp), "Hello. World"));
     strcpy(temp.str, ".   ");
     temp.size = strlen(".   ");
     assert(!strcmp(FixDotNextLetterProblems(&temp), ".   "));
+    Clear(&temp);
 }
 
 void TestFix2()
 {
+    struct string temp;
+    SetString(&temp);
     strcpy(temp.str, "Hello hello");
     temp.size = strlen("Hello hello");
     assert(!strcmp(FixTwiceWordProblem(&temp), "Hello hello"));
@@ -29,12 +32,13 @@ void TestFix2()
     strcpy(temp.str, "my Mam. Mam");
     temp.size = strlen("my Mam. Mam");
     assert(!strcmp(FixTwiceWordProblem(&temp), "my Mam. Mam"));
+    Clear(&temp);
 }
 
 int main(){
-    SetString(&temp);
+    
     TestFix1();
     TestFix2();
-    Clear(&temp);
+
     return 0;
 }

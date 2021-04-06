@@ -12,7 +12,7 @@ RunProgram:
 	./bin/program/main
 
 RunTests:
-	./bin/tests/tests -lm
+	./bin/tests/tests 
 
 Clean: 
 	rm -rf bin
