@@ -2,7 +2,7 @@
 #include <assert.h>
 #include <string.h>
 #undef main
-
+/*
 void TestFix1()
 {
     string temp;
@@ -14,7 +14,7 @@ void TestFix1()
     temp.size = strlen(".   ");
     assert(!strcmp(FixDotNextLetterProblems(&temp), ".   "));
     Clear(&temp);
-}
+}*/
 
 void TestFix2()
 {
@@ -36,7 +36,7 @@ void TestFix2()
 }
 
 int main(){
-    TestFix1();
+    /*TestFix1();*/
     TestFix2();
     return 0;
 }
