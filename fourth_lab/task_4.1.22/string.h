@@ -13,14 +13,20 @@ typedef unsigned short bool_;
 
 #define DEFAULT_CAPACITY 50
 
-struct string;
-void SetString(struct string* str);
-void Push(struct string* str, char element);
-struct string* RemoveAt(struct string* str, int index);
-struct string* AddAt(struct string* str, int index, char element);
-void EnterText(struct string* text);
-struct string* CopyArrayToStr(struct string* str, char* array);
-void Clear(struct string* str);
+typedef struct
+{
+    char* str;
+    int size;
+    int capacity;
+
+}string;
+void SetString( string* str);
+void Push( string* str, char element);
+string* RemoveAt( string* str, int index);
+string* AddAt( string* str, int index, char element);
+void EnterText( string* text);
+string* CopyArrayToStr( string* str, char* array);
+void Clear( string* str);
 void CheckAllocationError(char* text);
 
 #endif

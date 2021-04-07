@@ -5,7 +5,7 @@
 
 void TestFix1()
 {
-    struct string temp;
+    string temp;
     SetString(&temp);
     strcpy(temp.str, "Hello. World");
     temp.size = strlen("Hello. World");
@@ -18,11 +18,11 @@ void TestFix1()
 
 void TestFix2()
 {
-    struct string temp;
+    string temp;
     SetString(&temp);
     strcpy(temp.str, "Hello hello");
     temp.size = strlen("Hello hello");
-    assert(!strcmp(FixTwiceWordProblem(&temp), "Hello hello"));
+    assert(!strcmp(FixTwiceWordProblem(&temp), "Hello -----"));
     strcpy(temp.str, "hello hello");
     temp.size = strlen("hello hello");
     assert(!strcmp(FixTwiceWordProblem(&temp), "hello -----"));

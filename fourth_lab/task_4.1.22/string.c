@@ -1,14 +1,6 @@
 #include "string.h"
-
-struct string
-{
-    char* str;
-    int size;
-    int capacity;
-
-};
-
-void Clear(struct string* str)
+#include <conio.h>
+void Clear(string* str)
 {
    if (str->str != NULL) free(str->str);
 }
@@ -22,7 +14,7 @@ void CheckAllocationError(char* text)
     }
 }
 
-void SetString(struct string* str)
+void SetString(string* str)
 {
     str->capacity = DEFAULT_CAPACITY;
     str->size = 0;
@@ -30,7 +22,7 @@ void SetString(struct string* str)
     CheckAllocationError(str->str);
 }
 
-void Push(struct string* str, char element)
+void Push(string* str, char element)
 {
     str->str[str->size++] = element;
     str->str[str->size] = '\0';
@@ -42,9 +34,9 @@ void Push(struct string* str, char element)
     }
 }
 
-struct string* RemoveAt(struct string* str, int index)
+ string* RemoveAt(string* str, int index)
 {
-    struct string temp;
+     string temp;
     SetString(&temp);
     int i = 0;
     for (; i < index; ++i)
@@ -61,9 +53,9 @@ struct string* RemoveAt(struct string* str, int index)
     return str;
 }
 
-struct string* AddAt(struct string* str, int index, char element)
+ string* AddAt(string* str, int index, char element)
 {
-    struct string temp;
+     string temp;
     SetString(&temp);
     int i = 0;
     for (; i < index; ++i)
@@ -80,7 +72,7 @@ struct string* AddAt(struct string* str, int index, char element)
     return str;
 }
 
-void EnterText(struct string* text)
+void EnterText(string* text)
 {
     char temp;
     while ((temp = getche()) != '$')
@@ -90,7 +82,7 @@ void EnterText(struct string* text)
     }
 }
 
-struct string* CopyArrayToStr(struct string* str, char* array)
+ string* CopyArrayToStr( string* str, char* array)
 {
     Clear(str);
     SetString(str);

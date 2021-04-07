@@ -1,16 +1,17 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
-struct string
+typedef struct
 {
     char* str;
     int size;
     int capacity;
 
-};
-char* FixDotNextLetterProblems(struct string* text);
-char* FixTwiceWordProblem(struct string* text);
-void SetString(struct string* str);
-void Clear(struct string* str);
+}string;
+
+char* FixDotNextLetterProblems(string* text);
+char* FixTwiceWordProblem(string* text);
+void SetString(string* str);
+void Clear(string* str);
 
 #endif

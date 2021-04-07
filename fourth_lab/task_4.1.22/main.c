@@ -1,8 +1,9 @@
 #include "string.h"
 #include "string.c"
-#include <conio.h>
+#include <math.h>
 
-char* FixDotNextLetterProblems(struct string* text)
+
+char* FixDotNextLetterProblems(string* text)
 {
     int i = 0;
     for (; i < text->size; ++i)
@@ -24,11 +25,11 @@ char* FixDotNextLetterProblems(struct string* text)
     return text->str;
 }
 
-bool_ IsEqual(struct string* text, int index1, int index2)
+bool_ IsEqual(string* text, int index1, int index2)
 {
     do
     {
-        if (text->str[index1] != text->str[index2]) return false;
+        if ((text->str[index1] != text->str[index2]) && (abs(text->str[index1] - text->str[index2]) != 32)) return false;
         else 
         {
             ++index1;
@@ -38,7 +39,7 @@ bool_ IsEqual(struct string* text, int index1, int index2)
     return true;
 }
 
-void DeleteTwicedWord(struct string* text, int index2)
+void DeleteTwicedWord(string* text, int index2)
 {
     while (index2 < text->size && text->str[index2] != ' ' && text->str[index2] != '%' && text->str[index2] != '.')
     {
@@ -47,7 +48,7 @@ void DeleteTwicedWord(struct string* text, int index2)
     }
 }
 
-char* FixTwiceWordProblem(struct string* text)
+char* FixTwiceWordProblem(string* text)
 {
 
     int i1 = 0, i2 = 0;
@@ -75,7 +76,7 @@ char* FixTwiceWordProblem(struct string* text)
     return text->str;
 }
 
-void PrintFixedText(struct string* text)
+void PrintFixedText(string* text)
 {
     int i = 0;
     for (; i < text->size; ++i)
@@ -91,7 +92,7 @@ void PrintFixedText(struct string* text)
 
 int main()
 {
-    struct string text;
+    string text;
     SetString(&text);
     printf("Enter any text, then the program check it for mistakes\nTo end writing just type '$' symbol\n");
     EnterText(&text);
