@@ -15,7 +15,7 @@ void TestFix1()
     assert(!strcmp(FixDotNextLetterProblems(&temp), ".   "));
     Clear(&temp);
 }
-/*
+
 void TestFix2()
 {
     string temp;
@@ -34,9 +34,9 @@ void TestFix2()
     assert(!strcmp(FixTwiceWordProblem(&temp), "my Mam. Mam"));
     Clear(&temp);
 }
-*/
+
 int main(){
-    /*TestFix1();*/
+    TestFix1();
     /*TestFix2();*/
     return 0;
 }
