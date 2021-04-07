@@ -21,7 +21,6 @@ void TestFixMistakes()
     assert(!strcmp(FixMistakes(&temp), "Daniel (Bondarcov) [Vasilievich] "));
 }
 
-
 int main(){
    
     SetString(&temp);
