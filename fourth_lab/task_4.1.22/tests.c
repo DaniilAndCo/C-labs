@@ -17,12 +17,14 @@ void TestsFix()
     strcpy(temp.str, "Hell");
     temp.size = strlen("Hell");
     assert(!strcmp(FixTwiceWordProblem(&temp), "Hell"));
+    strcpy(temp.str, "a a");
+    temp.size = strlen("a a");
+    assert(!strcmp(FixTwiceWordProblem(&temp), "a -"));
    
     Clear(&temp);
 }
 
 int main(){
-
     TestsFix();
     return 0;
 }

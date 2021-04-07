@@ -17,7 +17,6 @@ char* FixDotNextLetterProblems(string* text)
             }
             if (i < text->size && (text->str[i] >= 97 && text->str[i] <= 122))
             {
-                printf("%c", text->str[7] - 32);
                 text->str[i] -= 32;
             }
         }
@@ -54,16 +53,16 @@ char* FixTwiceWordProblem(string* text)
     int i1 = 0, i2 = 0;
     while (i2 < text->size)
     {
-        while (text->str[i1] == ' ' || text->str[i1] == '%')
+        while (i2 < text->size && (text->str[i1] == ' ' || text->str[i1] == '%'))
         {
             ++i1;
         }
         i2 = i1;
-        while (text->str[i2] != ' ' && text->str[i2] != '%')
+        while (i2 < text->size && (text->str[i2] != ' ' && text->str[i2] != '%'))
         {
             ++i2;
         }
-        while (text->str[i2] == ' ' || text->str[i2] == '%')
+        while (i2 < text->size && (text->str[i2] == ' ' || text->str[i2] == '%'))
         {
             ++i2;
         }
