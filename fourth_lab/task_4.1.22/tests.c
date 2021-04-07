@@ -36,7 +36,7 @@ void TestFix2()
 }
 
 int main(){
-    TestFix2();
     TestFix1();
+    //TestFix2();
     return 0;
 }
