@@ -14,12 +14,7 @@ void TestFix1()
     temp.size = strlen(".   ");
     assert(!strcmp(FixDotNextLetterProblems(&temp), ".   "));
     Clear(&temp);
-}
-
-void TestFix2()
-{
-    string temp;
-    SetString(&temp);
+    
     strcpy(temp.str, "Hello hello");
     temp.size = strlen("Hello hello");
     assert(!strcmp(FixTwiceWordProblem(&temp), "Hello -----"));
@@ -36,7 +31,7 @@ void TestFix2()
 }
 
 int main(){
+
     TestFix1();
-    /*TestFix2();*/
     return 0;
 }
