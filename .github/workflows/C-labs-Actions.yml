@@ -40,5 +40,7 @@ jobs:
     - name: compiling and testing lab 5.1
       working-directory: ./fifth_lab/mutually_simple
       run: make Makefile all  
-      
+    - name: compiling and testing lab 5.2
+      working-directory: ./sixth_lab
+      run: make Makefile all    
     
