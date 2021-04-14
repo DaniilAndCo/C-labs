@@ -29,8 +29,14 @@ void Push(string* str, char element)
     if (str->size >= str->capacity - 1)
     {
         str->capacity *= 2;
+        char* copy = str->str;
         str->str = (char*)realloc(str->str, str->capacity * sizeof(char));
-        CheckAllocationError(str->str);
+        if (!str->str)
+        {   
+            free(copy);
+            printf("Allocation error\n");
+            exit(0);
+        }
     }
 }
 
