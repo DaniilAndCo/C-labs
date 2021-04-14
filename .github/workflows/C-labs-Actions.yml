@@ -20,4 +20,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: compiling and testing
-      run: for /D %d in (sub-*) do make -C %%d
+      run: for /D %d in (*/) do make -C %%d
