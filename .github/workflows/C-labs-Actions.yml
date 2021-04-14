@@ -21,7 +21,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: compiling and testing lab
       run: |
-       for %d in (sub-*) do (
+       for (%d in (sub-*)) do (
        cd %d
        make
        cd ..
