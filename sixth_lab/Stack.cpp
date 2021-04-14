@@ -21,7 +21,11 @@ class Stack
         stack_.PopBack();
         return result;
     }
-    T Top()
+    T Top() const
+    {
+        return *(--stack_.end());
+    }
+    T& Top()
     {
         return *(--stack_.end());
     }

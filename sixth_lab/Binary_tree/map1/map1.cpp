@@ -14,10 +14,7 @@
     template <typename T1, typename T2>
     typename Map1<T1, T2>::Node* Map1<T1, T2>::Insert_(const pair<T1, T2>& data, Node* temp, Node* parent)
     {
-        auto has = Find_(data.first, root_);
-        if (has)
-            has->data_.second = data.second;
-        else if (!temp) {
+        if (!temp) {
             temp = new Node(data, parent);
             if (parent)
             if (parent->data_.first > data.first) parent->left_ = temp;
@@ -49,14 +46,13 @@
     template <typename T1, typename T2>
     void Map1<T1, T2>::GetLeaves_(Node* temp, vector<pair<T1, T2>>& answer)
     {
-        if (temp) {
-            GetLeaves_(temp->left_, answer);
-            GetLeaves_(temp->right_, answer);
-        }
-        else
+        if (!temp->left_ && !temp->right_)
         {
-            answer.push_back(temp->parent_->data_);
+            answer.push_back(temp->data_);
         }
+        if (temp->right_) GetLeaves_(temp->right_, answer);
+        if (temp->left_) GetLeaves_(temp->left_, answer);
+        
     }
 
     template <typename T1, typename T2>

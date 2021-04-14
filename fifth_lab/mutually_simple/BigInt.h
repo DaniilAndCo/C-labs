@@ -137,6 +137,6 @@ class BigInt
 		if (big_number_[0] % 2 == 0) return true;
 			else return false;
 	}
-	friend std::ostream& operator<< (std::ostream &out, BigInt &point);
+	friend std::ostream& operator<< (std::ostream&, BigInt&);
 };
 
