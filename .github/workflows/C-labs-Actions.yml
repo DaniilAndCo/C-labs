@@ -19,27 +19,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: compiling and testing lab 1
-      working-directory: ./first_lab
-      run: make Makefile all
-    - name: compiling and testing lab 2.1
-      working-directory: ./second_lab/task1
-      run: make Makefile all
-    - name: compiling and testing lab 2.2
-      working-directory: ./second_lab/task2
-      run: make Makefile all
-    - name: compiling and testing lab 3.2
-      working-directory: ./third_lab
-      run: make Makefile all
-    - name: compiling and testing lab 4.2
-      working-directory: ./fourth_lab/task_4.2.22
-      run: make Makefile all  
-    - name: compiling and testing lab 4.1
-      working-directory: ./fourth_lab/task_4.1.22
-      run: make Makefile all
-    - name: compiling and testing lab 5.1
-      working-directory: ./fifth_lab/mutually_simple
-      run: make Makefile all  
-    - name: compiling and testing lab 5.2
-      working-directory: ./sixth_lab
-      run: make Makefile all 
+    - name: compiling and testing
+    - run: |
+       for /D %d in (sub-*) do make -C %%d
