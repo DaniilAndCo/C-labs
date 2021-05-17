@@ -8,6 +8,7 @@ jobs:
         uses: actions/checkout@master
       - name: Test
         run: |
+          cd ./seventh_lab
           gcc -ftest-coverage -fprofile-arcs -O0 -o test test.c ClintList.c
           ./test
           gcov -abcfu ClintList.c
