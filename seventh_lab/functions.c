@@ -1,4 +1,4 @@
-#include "functions.h"
+/*#include "functions.h"
 
 bool addGood(struct ClientList *clientList, struct GoodsList * goodsList){
     struct Good* newGood = (struct Good*) malloc(sizeof(struct Good));
@@ -269,4 +269,4 @@ bool PrintMenu(){
            "6. Calculate price of all Goods\n"
            "7. Close session\n\n");
     return true;
-}
+}*/
