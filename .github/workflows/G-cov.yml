@@ -2,7 +2,7 @@ name: Codecov
 on: [push, pull_request]
 jobs:
   run:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Fetch
         uses: actions/checkout@master
