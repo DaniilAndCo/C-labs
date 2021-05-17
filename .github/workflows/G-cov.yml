@@ -8,10 +8,11 @@ jobs:
         uses: actions/checkout@master
       - name: Test
         run: |
+          cd ./seventh_lab
           gcc -ftest-coverage -fprofile-arcs -O0 -o test test.c ClintList.c
           ./test
           gcov -abcfu ClintList.c
       - name: Upload
         uses: codecov/codecov-action@v1
-        with:
-          files: ./ClintList.c.gcov
+        with: 
+          files: ./seventh_lab/ClintList.c.gcov
