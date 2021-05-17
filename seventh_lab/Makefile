@@ -14,4 +14,4 @@ RunTests:
 	./test.exe
 
 Clean: 
-	del *.exe *.o
+	rm *.exe *.o
