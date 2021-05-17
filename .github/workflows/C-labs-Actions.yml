@@ -43,3 +43,6 @@ jobs:
     - name: compiling and testing lab 5.2
       working-directory: ./sixth_lab
       run: make Makefile all 
+    - name: compiling and testing lab 7.0
+      working-directory: ./seventh_lab
+      run: make Makefile all 
