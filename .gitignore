@@ -2,3 +2,6 @@
 bin/
 .vscode/
 .vs/
+.gcno/
+.gcda/
+.gcov/
