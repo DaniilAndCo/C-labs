@@ -14,5 +14,6 @@ jobs:
           gcov -abcfu ClintList.c
       - name: Upload
         uses: codecov/codecov-action@v1
-        with:
+        with: |
+          cd ./seventh_lab
           files: ./ClintList.c.gcov
