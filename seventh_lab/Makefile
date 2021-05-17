@@ -2,16 +2,16 @@ all: Clean BuildMain BuildTests RunTests
 
 BuildMain:
 	gcc -c main.c ClintList.c
-	gcc -lm main.o ClintList.o -o main
+	gcc -lm main.o ClintList.o -o main.exe
 
 BuildTests:
-	gcc -o bin/tests/test -Dmain=_main main.c test.c
+	gcc test.c ClintList.c -o test
 
 RunProgram:
-	./main
+	./main.exe
 
 RunTests:
-	./bin/tests/test
+	./test.exe
 
 Clean: 
-	del main.o Clint.o main.exe test.exe
+	del *.exe *.o
