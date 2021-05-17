@@ -14,4 +14,4 @@ RunTests:
 	./bin/tests/test
 
 Clean: 
-	rm -rf bin
+	del main.o Clint.o main.exe test.exe
