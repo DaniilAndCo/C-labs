@@ -1,0 +1,6 @@
+Vasiliy AB12313 Socks id341341 10 4 29_May 5_days
+Karina MC324123 Laptop id13123 2000 400 10_January 1_month
+Ksusha AB131313 House id3242 3000 300 1_September 15_years
+Alinka MC391123 Mobile id1243 4000 300 25_May 5_years
+Polinka MC39231 Sport_Car id112331 5300 790 1_June 10_years
+Vanya MC381382 Buisness_center id83823 10000 7999 27_May 5_years
