@@ -8,7 +8,6 @@ jobs:
         uses: actions/checkout@master
       - name: Test
         run: |
-          git clean -fxfd && make itest_tox
           cd ./seventh_lab
           gcc -ftest-coverage -fprofile-arcs -O0 -o test test.c ClintList.c
           ./test
