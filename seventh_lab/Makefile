@@ -14,4 +14,4 @@ RunTests:
 	./test.exe
 
 Clean: 
-	rm *.exe *.o *.gcda *.gcno
+	rm -rf *.exe *.o *.gcda *.gcno
