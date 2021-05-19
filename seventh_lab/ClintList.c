@@ -8,7 +8,6 @@ struct Node_Client* NewClient(){
     return newClient;
 }
 
-
 bool AddClient(struct ClientList* list, struct Client* client){
 
     struct Node_Client* newClient = NewClient();
@@ -27,7 +26,6 @@ bool AddClient(struct ClientList* list, struct Client* client){
     return true;
 }
 
-
 bool PrintClients(struct ClientList list){
 
     printf("\n____Printing Clients____\n\n");
@@ -44,7 +42,6 @@ bool PrintClients(struct ClientList list){
     printf("________________________\n");
     return true;
 }
-
 
 int PrintAllNames(struct ClientList list){
 

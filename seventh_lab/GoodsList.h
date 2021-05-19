@@ -1,7 +1,5 @@
 #pragma once
 #include "Goods.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 void PrintInfoGoods(struct Good good);
 
@@ -37,7 +35,6 @@ void AddGood(struct GoodsList* list, struct Good* good){
     list->head = newGood;
 
 }
-
 
 void PrintGoods(struct GoodsList list){
 
@@ -95,7 +92,6 @@ void DeleteGood(struct GoodsList* list, struct Good* good){
     printf("Good: <%s> is deleted\n\n", rmGood->data->name);
     free(rmGood);
 }
-
 
 void PrintInfoGoods(struct Good good){
     printf("\tGood: %s\nClient taken ID: %s\nValue: %i$\nMoney for it: %i$\nDate taken: %s\nTaken for time: %s\n\n",
