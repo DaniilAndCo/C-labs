@@ -6,10 +6,6 @@
 void PrintInfoGoods(struct Good good);
 
 struct GoodsList {
-
-//    struct Node_Good* head;
-//    struct Node_Good* tail;
-
     struct Node_Good {
         struct Good *data;
         struct Node_Good *next;
@@ -17,14 +13,12 @@ struct GoodsList {
     } *head, *tail;
 };
 
-
 struct Node_Good* NewGood(){
     struct Node_Good* newGood = (struct Node_Good*) malloc(sizeof(struct Node_Good));
     newGood->next = NULL;
     newGood->prev = NULL;
     return newGood;
 }
-
 
 void AddGood(struct GoodsList* list, struct Good* good){
 

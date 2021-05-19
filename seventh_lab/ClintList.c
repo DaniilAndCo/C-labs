@@ -67,12 +67,12 @@ int PrintAllNames(struct ClientList list){
 
 }
 
-
 struct Node_Client* SearchClient(struct ClientList* list, struct Client* man){
     struct Node_Client *temp = list->head;
 
-    while(temp != NULL && temp->data != man){
+    while(temp->data != NULL && temp != NULL && temp->data != man){
         temp = temp->next;
+        printf("%s\n", temp->data->name);
     }
 
     if(temp == NULL && temp->data == NULL){
@@ -83,22 +83,6 @@ struct Node_Client* SearchClient(struct ClientList* list, struct Client* man){
     return temp;
 }
 
-
-struct Node_Client* SearchMan(struct ClientList* list, const char *name){
-    struct Node_Client *temp = list->head;
-
-
-    while(temp->data->name != name){
-        temp = temp->next;
-    }
-
-    if(temp->data == NULL){
-        printf("No Client found\n");
-        return NULL;
-    }
-
-    return temp;
-}
 
 bool DeleteClient(struct ClientList* list, struct Client* man){
     struct Node_Client* rmClient = SearchClient(list, man);

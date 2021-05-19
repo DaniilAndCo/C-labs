@@ -5,6 +5,8 @@
 
 int main()
 {
+
+    
     struct Node_Client temp;
     temp.next = NULL;
     temp.prev = NULL;
@@ -33,17 +35,10 @@ int main()
     struct Client client1 = {"1", "1", "1"};
 
     assert(!strcmp(SearchClient(&list, &client)->data->name, "0"));
-    //assert(SearchClient(&list, &client1) == NULL);
-
-    //assert(!strcmp(SearchMan(&list, "0")->data->name, "0"));
-    //assert(SearchMan(&list, &client1) == NULL);
 
     assert(DeleteClient(&list, &client) == true);
-    //assert(DeleteClient(&list, &client1) == false);
 
     assert(PrintInfo(client) == true);
-    
-    
 
     return 0;
 }

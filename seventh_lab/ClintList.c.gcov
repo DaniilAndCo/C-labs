@@ -3,247 +3,221 @@
         -:    0:Data:ClintList.gcda
         -:    0:Runs:1
         -:    1:#include "ClintList.h"
-        -:    2:
+        -:    2:#include<stdio.h>
+        -:    3:#include<stdlib.h>
+        -:    4:
 function NewClient called 3 returned 100% blocks executed 100%
-        3:    3:struct Node_Client* NewClient(){
-        3:    4:    struct Node_Client* newClient = (struct Node_Client*) malloc(sizeof(struct Node_Client));
-        3:    5:    newClient->next = NULL;
-        3:    6:    newClient->prev = NULL;
-        3:    7:    newClient->data = NULL;
-        3:    8:    return newClient;
-        3:    8-block  0
+        3:    5:struct Node_Client* NewClient(){
+        3:    6:    struct Node_Client* newClient = (struct Node_Client*) malloc(sizeof(struct Node_Client));
+        3:    7:    newClient->next = NULL;
+        3:    8:    newClient->prev = NULL;
+        3:    9:    newClient->data = NULL;
+        3:   10:    return newClient;
+        3:   10-block  0
 unconditional  0 taken 3
-        -:    9:}
-        -:   10:
-        -:   11:
-function AddClient called 2 returned 100% blocks executed 100%
-        2:   12:bool AddClient(struct ClientList* list, struct Client* client){
+        -:   11:}
+        -:   12:
         -:   13:
-        2:   14:    struct Node_Client* newClient = NewClient();
-        2:   14-block  0
+function AddClient called 2 returned 100% blocks executed 100%
+        2:   14:bool AddClient(struct ClientList* list, struct Client* client){
+        -:   15:
+        2:   16:    struct Node_Client* newClient = NewClient();
+        2:   16-block  0
 call    0 returned 2
-        2:   15:    newClient->data = (struct Client*) malloc(sizeof(struct Client));
-        2:   16:    newClient->data = client;
-        -:   17:
-        2:   18:    if(list->head == NULL){
+        2:   17:    newClient->data = (struct Client*) malloc(sizeof(struct Client));
+        2:   18:    newClient->data = client;
+        -:   19:
+        2:   20:    if(list->head == NULL){
 branch  0 taken 1 (fallthrough)
 branch  1 taken 1
-        1:   19:        list->head = newClient;
-        1:   20:        list->tail = list->head;
-        1:   21:        return false;
-        1:   21-block  0
+        1:   21:        list->head = newClient;
+        1:   22:        list->tail = list->head;
+        1:   23:        return false;
+        1:   23-block  0
 unconditional  0 taken 1
-        -:   22:    }
-        -:   23:
-        1:   24:    list->head->prev = newClient;
-        1:   25:    newClient->next = list->head;
-        1:   26:    list->head = newClient;
-        1:   27:    return true;
-        1:   27-block  0
+        -:   24:    }
+        -:   25:
+        1:   26:    list->head->prev = newClient;
+        1:   27:    newClient->next = list->head;
+        1:   28:    list->head = newClient;
+        1:   29:    return true;
+        1:   29-block  0
 unconditional  0 taken 1
-        -:   28:}
-        -:   29:
-        -:   30:
-function PrintClients called 2 returned 100% blocks executed 100%
-        2:   31:bool PrintClients(struct ClientList list){
+        -:   30:}
+        -:   31:
         -:   32:
-        2:   33:    printf("\n____Printing Clients____\n\n");
-        2:   33-block  0
+function PrintClients called 2 returned 100% blocks executed 100%
+        2:   33:bool PrintClients(struct ClientList list){
+        -:   34:
+        2:   35:    printf("\n____Printing Clients____\n\n");
+        2:   35-block  0
 call    0 returned 2
-        2:   34:    if(list.head == NULL){
+        2:   36:    if(list.head == NULL){
 branch  0 taken 1 (fallthrough)
 branch  1 taken 1
-        1:   35:        printf("Client List is empty!\n");
-        1:   35-block  0
+        1:   37:        printf("Client List is empty!\n");
+        1:   37-block  0
 call    0 returned 1
-        1:   36:        return false;
+        1:   38:        return false;
 unconditional  0 taken 1
-        -:   37:    }
-        -:   38:
-        1:   39:    struct Node_Client* temp = list.head;
-        3:   40:    while(temp != NULL){
-        1:   40-block  0
+        -:   39:    }
+        -:   40:
+        1:   41:    struct Node_Client* temp = list.head;
+        3:   42:    while(temp != NULL){
+        1:   42-block  0
 unconditional  0 taken 1
-        3:   40-block  1
+        3:   42-block  1
 branch  1 taken 2
 branch  2 taken 1 (fallthrough)
-        2:   41:        PrintInfo(*temp->data);
-        2:   41-block  0
+        2:   43:        PrintInfo(*temp->data);
+        2:   43-block  0
 call    0 returned 2
-        2:   42:        temp = temp->next;
+        2:   44:        temp = temp->next;
 unconditional  0 taken 2
-        -:   43:    }
-        1:   44:    printf("________________________\n");
-        1:   44-block  0
+        -:   45:    }
+        1:   46:    printf("________________________\n");
+        1:   46-block  0
 call    0 returned 1
-        1:   45:    return true;
+        1:   47:    return true;
 unconditional  0 taken 1
-        -:   46:}
-        -:   47:
-        -:   48:
-function PrintAllNames called 3 returned 100% blocks executed 100%
-        3:   49:int PrintAllNames(struct ClientList list){
+        -:   48:}
+        -:   49:
         -:   50:
-        3:   51:    printf("\n____Printing Clients By Name____\n");
-        3:   51-block  0
+function PrintAllNames called 3 returned 100% blocks executed 100%
+        3:   51:int PrintAllNames(struct ClientList list){
+        -:   52:
+        3:   53:    printf("\n____Printing Clients By Name____\n");
+        3:   53-block  0
 call    0 returned 3
-        3:   52:    if(list.head == NULL){
+        3:   54:    if(list.head == NULL){
 branch  0 taken 1 (fallthrough)
 branch  1 taken 2
-        1:   53:        printf("Client List is empty!\n");
-        1:   53-block  0
+        1:   55:        printf("Client List is empty!\n");
+        1:   55-block  0
 call    0 returned 1
-        1:   54:        return 0;
+        1:   56:        return 0;
 unconditional  0 taken 1
-        -:   55:    }
-        -:   56:
-        2:   57:    struct Node_Client* temp = list.head;
-        2:   58:    int num = 1;
-        6:   59:    while(temp != NULL){
-        2:   59-block  0
+        -:   57:    }
+        -:   58:
+        2:   59:    struct Node_Client* temp = list.head;
+        2:   60:    int num = 1;
+        6:   61:    while(temp != NULL){
+        2:   61-block  0
 unconditional  0 taken 2
-        6:   59-block  1
+        6:   61-block  1
 branch  1 taken 4
 branch  2 taken 2 (fallthrough)
-        4:   60:        printf("%i. %s\n", num, temp->data->name);
-        4:   60-block  0
+        4:   62:        printf("%i. %s\n", num, temp->data->name);
+        4:   62-block  0
 call    0 returned 4
-        4:   61:        num ++;
-        4:   62:        temp = temp->next;
+        4:   63:        num ++;
+        4:   64:        temp = temp->next;
 unconditional  0 taken 4
-        -:   63:    }
-        2:   64:    printf("_____________________________\n");
-        2:   64-block  0
+        -:   65:    }
+        2:   66:    printf("_____________________________\n");
+        2:   66-block  0
 call    0 returned 2
-        -:   65:
-        2:   66:    return num;
-unconditional  0 taken 2
         -:   67:
-        -:   68:}
-        -:   69:
-        -:   70:
-function SearchClient called 2 returned 100% blocks executed 70%
-        2:   71:struct Node_Client* SearchClient(struct ClientList* list, struct Client* man){
-        2:   72:    struct Node_Client *temp = list->head;
-        -:   73:
-        4:   74:    while(temp != NULL && temp->data != man){
-        2:   74-block  0
+        2:   68:    return num;
 unconditional  0 taken 2
-        4:   74-block  1
-branch  1 taken 4 (fallthrough)
-branch  2 taken 0
-        4:   74-block  2
-branch  3 taken 2
-branch  4 taken 2 (fallthrough)
-        2:   75:        temp = temp->next;
+        -:   69:
+        -:   70:}
+        -:   71:
+function SearchClient called 2 returned 100% blocks executed 73%
+        2:   72:struct Node_Client* SearchClient(struct ClientList* list, struct Client* man){
+        2:   73:    struct Node_Client *temp = list->head;
+        -:   74:
+        4:   75:    while(temp->data != NULL && temp != NULL && temp->data != man){
         2:   75-block  0
 unconditional  0 taken 2
-        -:   76:    }
-        -:   77:
-       2*:   78:    if(temp == NULL && temp->data == NULL){
-        2:   78-block  0
+        4:   75-block  1
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0
+        4:   75-block  2
+branch  3 taken 4 (fallthrough)
+branch  4 taken 0
+        4:   75-block  3
+branch  5 taken 2
+branch  6 taken 2 (fallthrough)
+        2:   76:        temp = temp->next;
+        2:   77:        printf("%s\n", temp->data->name);
+        2:   77-block  0
+call    0 returned 2
+unconditional  1 taken 2
+        -:   78:    }
+        -:   79:
+       2*:   80:    if(temp == NULL && temp->data == NULL){
+        2:   80-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 2
-    %%%%%:   78-block  1
+    %%%%%:   80-block  1
 branch  2 never executed
 branch  3 never executed
-    #####:   79:        printf("No Client found\n");
-    %%%%%:   79-block  0
+    #####:   81:        printf("No Client found\n");
+    %%%%%:   81-block  0
 call    0 never executed
-    #####:   80:        return NULL;
+    #####:   82:        return NULL;
 unconditional  0 never executed
-        -:   81:    }
-        -:   82:
-        2:   83:    return temp;
-        2:   83-block  0
+        -:   83:    }
+        -:   84:
+        2:   85:    return temp;
+        2:   85-block  0
 unconditional  0 taken 2
-        -:   84:}
-        -:   85:
-        -:   86:
-function SearchMan called 0 returned 0% blocks executed 0%
-    #####:   87:struct Node_Client* SearchMan(struct ClientList* list, const char *name){
-    #####:   88:    struct Node_Client *temp = list->head;
-        -:   89:
-        -:   90:
-    #####:   91:    while(temp->data->name != name){
-    %%%%%:   91-block  0
-unconditional  0 never executed
-    %%%%%:   91-block  1
-branch  1 never executed
-branch  2 never executed
-    #####:   92:        temp = temp->next;
-    %%%%%:   92-block  0
-unconditional  0 never executed
-        -:   93:    }
-        -:   94:
-    #####:   95:    if(temp->data == NULL){
-    %%%%%:   95-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:   96:        printf("No Client found\n");
-    %%%%%:   96-block  0
-call    0 never executed
-    #####:   97:        return NULL;
-unconditional  0 never executed
-        -:   98:    }
-        -:   99:
-    #####:  100:    return temp;
-    %%%%%:  100-block  0
-unconditional  0 never executed
-        -:  101:}
-        -:  102:
+        -:   86:}
+        -:   87:
+        -:   88:
 function DeleteClient called 1 returned 100% blocks executed 64%
-        1:  103:bool DeleteClient(struct ClientList* list, struct Client* man){
-        1:  104:    struct Node_Client* rmClient = SearchClient(list, man);
-        1:  104-block  0
+        1:   89:bool DeleteClient(struct ClientList* list, struct Client* man){
+        1:   90:    struct Node_Client* rmClient = SearchClient(list, man);
+        1:   90-block  0
 call    0 returned 1
-        -:  105:
-        1:  106:    if(rmClient == NULL){
+        -:   91:
+        1:   92:    if(rmClient == NULL){
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    #####:  107:        return false;
-    %%%%%:  107-block  0
+    #####:   93:        return false;
+    %%%%%:   93-block  0
 unconditional  0 never executed
-        -:  108:    }
-        -:  109:
-        1:  110:    if(rmClient == list->tail){
-        1:  110-block  0
+        -:   94:    }
+        -:   95:
+        1:   96:    if(rmClient == list->tail){
+        1:   96-block  0
 branch  0 taken 1 (fallthrough)
 branch  1 taken 0
-        1:  111:        list->tail->prev->next = NULL;
-        1:  112:        list->tail = rmClient->prev;
-        1:  112-block  0
+        1:   97:        list->tail->prev->next = NULL;
+        1:   98:        list->tail = rmClient->prev;
+        1:   98-block  0
 unconditional  0 taken 1
-        -:  113:    }
-    #####:  114:    else if(rmClient == list->head){
-    %%%%%:  114-block  0
+        -:   99:    }
+    #####:  100:    else if(rmClient == list->head){
+    %%%%%:  100-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  115:        list->head->next->prev = NULL;
-    #####:  116:        list->head = rmClient->next;
-    %%%%%:  116-block  0
+    #####:  101:        list->head->next->prev = NULL;
+    #####:  102:        list->head = rmClient->next;
+    %%%%%:  102-block  0
 unconditional  0 never executed
-        -:  117:    }
-        -:  118:    else {
-    #####:  119:        rmClient->next->prev = rmClient->prev;
-    #####:  120:        rmClient->prev->next = rmClient->next;
-    %%%%%:  120-block  0
+        -:  103:    }
+        -:  104:    else {
+    #####:  105:        rmClient->next->prev = rmClient->prev;
+    #####:  106:        rmClient->prev->next = rmClient->next;
+    %%%%%:  106-block  0
 unconditional  0 never executed
-        -:  121:    }
-        -:  122:
-        1:  123:    printf("Client: <%s> is deleted\n\n", rmClient->data->name);
-        1:  123-block  0
+        -:  107:    }
+        -:  108:
+        1:  109:    printf("Client: <%s> is deleted\n\n", rmClient->data->name);
+        1:  109-block  0
 call    0 returned 1
-        1:  124:    free(rmClient);
-        1:  125:    return true;
+        1:  110:    free(rmClient);
+        1:  111:    return true;
 unconditional  0 taken 1
-        -:  126:}
-        -:  127:
+        -:  112:}
+        -:  113:
 function PrintInfo called 3 returned 100% blocks executed 100%
-        3:  128:bool PrintInfo(struct Client client){
-        3:  129:    printf("\tClient: %s\nPassport: %s\n\n", client.name, client.Passport);
-        3:  129-block  0
+        3:  114:bool PrintInfo(struct Client client){
+        3:  115:    printf("\tClient: %s\nPassport: %s\n\n", client.name, client.Passport);
+        3:  115-block  0
 call    0 returned 3
-        3:  130:    return true;
+        3:  116:    return true;
 unconditional  0 taken 3
-        -:  131:}
+        -:  117:}
