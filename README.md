@@ -1,3 +1,3 @@
 # C-labs
 This repository is for C labs
-![alt text](https://github.com/DaniilAndCo/C-labs/blob/main/Capture.PNG?raw=true)
+[![codecov](https://codecov.io/gh/DaniilAndCo/C-labs/branch/main/graph/badge.svg?token=NEL9XY86IV)](https://codecov.io/gh/DaniilAndCo/C-labs)
