@@ -5,8 +5,6 @@
 
 int main()
 {
-
-    
     struct Node_Client temp;
     temp.next = NULL;
     temp.prev = NULL;

@@ -1,6 +1,5 @@
 #include "GoodsList.h"
 
-#define NULL (void*)0
 struct Node_Good* NewGood(){
     struct Node_Good* newGood = (struct Node_Good*) malloc(sizeof(struct Node_Good));
     newGood->next = NULL;
