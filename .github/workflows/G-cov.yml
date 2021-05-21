@@ -9,4 +9,6 @@ jobs:
       - name: Upload
         uses: codecov/codecov-action@v1
         with: 
-          files: ./seventh_lab/ClintList.c.gcov
+          files: |
+            ./seventh_lab/ClintList.c.gcov
+            ./seventh_lab/GoodsList.c.gcov
