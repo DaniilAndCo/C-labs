@@ -1,8 +1,8 @@
 all: Clean BuildMain BuildTests RunTests
 
 BuildMain:
-	gcc -c main.c ClintList.c
-	gcc -lm main.o ClintList.o -o main.exe
+	gcc -c main.c ClintList.c GoodsList.c
+	gcc -lm main.o ClintList.o GoodsList.o -o main.exe
 
 BuildTests:
 	gcc test.c ClintList.c -o test

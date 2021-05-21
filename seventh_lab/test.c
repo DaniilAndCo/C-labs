@@ -65,9 +65,8 @@ int main()
     struct Good good1 = {"3", "3", 3, 3, "3", "3"};
 
     assert(!strcmp(SearchGood(&list1, &good)->data->name, "0"));
-    //assert(SearchGood(&list1, &good1) == NULL);
+
     assert(DeleteGood(&list1, &good) == true);
-    //assert(DeleteGood(&list1, &good1) == false);
 
     return 0;
 }
