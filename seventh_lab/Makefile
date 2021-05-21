@@ -5,7 +5,7 @@ BuildMain:
 	gcc -lm main.o ClintList.o GoodsList.o -o main.exe
 
 BuildTests:
-	gcc test.c ClintList.c -o test
+	gcc test.c ClintList.c GoodsList.c -o test
 
 RunProgram:
 	./main.exe
