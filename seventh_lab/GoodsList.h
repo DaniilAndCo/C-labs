@@ -1,7 +1,9 @@
 #pragma once
 #include "Goods.h"
 
-void PrintInfoGoods(struct Good good);
+#define bool int
+#define true 1
+#define false 0
 
 struct GoodsList {
     struct Node_Good {
@@ -11,89 +13,14 @@ struct GoodsList {
     } *head, *tail;
 };
 
-struct Node_Good* NewGood(){
-    struct Node_Good* newGood = (struct Node_Good*) malloc(sizeof(struct Node_Good));
-    newGood->next = NULL;
-    newGood->prev = NULL;
-    return newGood;
-}
+struct Node_Good* NewGood();
 
-void AddGood(struct GoodsList* list, struct Good* good){
+bool AddGood(struct GoodsList*, struct Good*);
 
-    struct Node_Good* newGood = NewGood();
-    newGood->data = (struct Good*) malloc(sizeof(struct Good));
-    newGood->data = good;
+bool PrintGoods(struct GoodsList);
 
-    if(list->head == NULL){
-        list->head = newGood;
-        list->tail = list->head;
-        return;
-    }
+struct Node_Good* SearchGood(struct GoodsList*, struct Good*);
 
-    list->head->prev = newGood;
-    newGood->next = list->head;
-    list->head = newGood;
+bool DeleteGood(struct GoodsList*, struct Good*);
 
-}
-
-void PrintGoods(struct GoodsList list){
-
-    printf("\n____Printing Goods____\n");
-    if(list.head == NULL){
-        printf("Goods List is empty!\n");
-        return;
-    }
-
-    struct Node_Good* temp = list.head;
-    while(temp != NULL){
-        PrintInfoGoods(*temp->data);
-        temp = temp->next;
-    }
-    printf("________________________\n");
-}
-
-
-struct Node_Good* SearchGood(struct GoodsList* list, struct Good* man){
-    struct Node_Good *temp = list->head;
-
-    while(temp->data != man){
-        temp = temp->next;
-    }
-
-    if(temp->data == NULL){
-        printf("No such Good found\n");
-        return NULL;
-    }
-
-    return temp;
-}
-
-
-void DeleteGood(struct GoodsList* list, struct Good* good){
-    struct Node_Good* rmGood = SearchGood(list, good);
-
-    if(rmGood == NULL){
-        return;
-    }
-
-    if(rmGood == list->tail){
-        list->tail->prev->next = NULL;
-        list->tail = rmGood->prev;
-    }
-    else if(rmGood == list->head){
-        list->head->next->prev = NULL;
-        list->head = rmGood->next;
-    }
-    else {
-        rmGood->next->prev = rmGood->prev;
-        rmGood->prev->next = rmGood->next;
-    }
-
-    printf("Good: <%s> is deleted\n\n", rmGood->data->name);
-    free(rmGood);
-}
-
-void PrintInfoGoods(struct Good good){
-    printf("\tGood: %s\nClient taken ID: %s\nValue: %i$\nMoney for it: %i$\nDate taken: %s\nTaken for time: %s\n\n",
-            good.name, good.clientID, good.value, good.money, good.date, good.timeKeeping);
-}
+bool PrintInfoGoods(struct Good);

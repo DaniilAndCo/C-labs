@@ -1,6 +1,6 @@
 #include <assert.h>
-//#include "functions.h"
 #include "ClintList.h"
+#include "GoodsList.h"
 #include <string.h>
 
 int main()
@@ -28,8 +28,6 @@ int main()
 
     assert(PrintClients(list) == true);
 
-    printf("%d", PrintAllNames(list));
-
     assert(PrintAllNames(list) == 3);
 
     struct Client client1 = {"1", "1", "1"};
@@ -39,6 +37,37 @@ int main()
     assert(DeleteClient(&list, &client) == true);
 
     assert(PrintInfo(client) == true);
+
+    struct Node_Good temp1;
+    temp1.next = NULL;
+    temp1.prev = NULL;
+    temp1.data = NULL;
+    assert(NewGood()->data == temp1.data);
+
+    ///////
+
+    struct GoodsList list1;
+    list1.head = NULL;
+    list1.tail = NULL;
+    struct Good good = {"0", "0", 0, 0, "0", "0"};
+    struct Good good2 = {"2", "2", 2, 2, "2", "2"};
+
+    assert(PrintGoods(list1) == false);
+
+    assert(PrintInfoGoods(good) == true);
+
+    assert(AddGood(&list1, &good) == false);
+    assert(AddGood(&list1, &good2) == true);
+
+    assert(PrintGoods(list1) == true);
+
+
+    struct Good good1 = {"3", "3", 3, 3, "3", "3"};
+
+    assert(!strcmp(SearchGood(&list1, &good)->data->name, "0"));
+    //assert(SearchGood(&list1, &good1) == NULL);
+    assert(DeleteGood(&list1, &good) == true);
+    //assert(DeleteGood(&list1, &good1) == false);
 
     return 0;
 }

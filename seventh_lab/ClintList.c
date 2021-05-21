@@ -107,6 +107,6 @@ bool DeleteClient(struct ClientList* list, struct Client* man){
 }
 
 bool PrintInfo(struct Client client){
-    printf("\tClient: %s\nPassport: %s\n\n", client.name, client.Passport);
+    printf("\tClient: %s\nPassport: %s\n", client.name, client.Passport);
     return true;
 }

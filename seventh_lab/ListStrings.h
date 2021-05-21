@@ -1,4 +1,3 @@
-//#include <ntsid.h>
 #pragma once
 #include <stdlib.h>
 #include <stdio.h>
@@ -11,9 +10,6 @@ struct ListString {
         struct Node_s *next;
         struct Node_s *prev;
     } *head, *tail;
-
-//    struct Node_s *head;
-//    struct Node_s *tail;
 };
 
 
@@ -22,8 +18,6 @@ struct Node_s *GetNewNode_s() {
 
     newNode->next = NULL;
     newNode->prev = NULL;
-
-
     return newNode;
 };
 
@@ -60,7 +54,6 @@ void PrintAll_s(struct ListString list) {
     printf("Tail - %s\n\n", list.tail->data);
 }
 
-
 void PrintReverse_s(struct ListString list) {
     printf("\nPrinting in Reverse order...\n");
 
@@ -72,7 +65,6 @@ void PrintReverse_s(struct ListString list) {
     printf("\n\n");
 }
 
-
 struct Node_s *Search_s(struct ListString list, char *data) {
     struct Node_s *temp = list.head;
 
@@ -82,7 +74,6 @@ struct Node_s *Search_s(struct ListString list, char *data) {
 
     return temp;
 }
-
 
 void Delete_s(struct ListString * list, char *data) {
 
