@@ -10,3 +10,4 @@ jobs:
         uses: codecov/codecov-action@v1
         with: 
           files: ./seventh_lab/ClintList.c.gcov
+          files: ./seventh_lab/GoodsList.c.gcov
