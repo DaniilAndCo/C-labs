@@ -2,9 +2,7 @@
 
 struct Node_Client* NewClient(){
     struct Node_Client* newClient = (struct Node_Client*) malloc(sizeof(struct Node_Client));
-    newClient->next = NULL;
-    newClient->prev = NULL;
-    newClient->data = NULL;
+    newClient->data = newClient->prev = newClient->next = NULL;
     return newClient;
 }
 
@@ -72,11 +70,7 @@ struct Node_Client* SearchClient(struct ClientList* list, struct Client* man){
         printf("%s\n", temp->data->name);
     }
 
-    if(temp == NULL && temp->data == NULL){
-        printf("No Client found\n");
-        return NULL;
-    }
-
+    if(temp == NULL && temp->data == NULL) return NULL;
     return temp;
 }
 
@@ -84,9 +78,7 @@ struct Node_Client* SearchClient(struct ClientList* list, struct Client* man){
 bool DeleteClient(struct ClientList* list, struct Client* man){
     struct Node_Client* rmClient = SearchClient(list, man);
 
-    if(rmClient == NULL){
-        return false;
-    }
+    if(rmClient == NULL) return false;
 
     if(rmClient == list->tail){
         list->tail->prev->next = NULL;

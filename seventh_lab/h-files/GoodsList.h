@@ -2,9 +2,6 @@
 #include "Goods.h"
 #include <malloc.h>
 #include <stdio.h>
-#define bool int
-#define true 1
-#define false 0
 
 struct GoodsList {
     struct Node_Good {

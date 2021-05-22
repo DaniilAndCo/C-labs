@@ -2,9 +2,7 @@
 
 struct Node_Good* NewGood(){
     struct Node_Good* newGood = (struct Node_Good*) malloc(sizeof(struct Node_Good));
-    newGood->next = NULL;
-    newGood->prev = NULL;
-    newGood->data = NULL;
+    newGood->data = newGood->prev = newGood->next = NULL;
     return newGood;
 }
 
@@ -49,20 +47,14 @@ struct Node_Good* SearchGood(struct GoodsList* list, struct Good* man){
     while(temp->data != NULL && temp != NULL && temp->data != man){
         temp = temp->next;
     }
-
-    if(temp->data == NULL){
-        return NULL;
-    }
-
+    if(temp->data == NULL) return NULL;
     return temp;
 }
 
 bool DeleteGood(struct GoodsList* list, struct Good* good){
     struct Node_Good* rmGood = SearchGood(list, good);
 
-    if(rmGood == NULL){
-        return false;
-    }
+    if(rmGood == NULL) return false;
 
     if(rmGood == list->tail){
         list->tail->prev->next = NULL;
