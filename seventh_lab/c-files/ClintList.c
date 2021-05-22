@@ -59,7 +59,6 @@ int PrintAllNames(struct ClientList list){
     printf("_____________________________\n");
 
     return num;
-
 }
 
 struct Node_Client* SearchClient(struct ClientList* list, struct Client* man){

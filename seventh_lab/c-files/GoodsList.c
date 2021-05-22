@@ -47,7 +47,9 @@ struct Node_Good* SearchGood(struct GoodsList* list, struct Good* man){
     while(temp->data != NULL && temp != NULL && temp->data != man){
         temp = temp->next;
     }
+
     if(temp->data == NULL) return NULL;
+    
     return temp;
 }
 

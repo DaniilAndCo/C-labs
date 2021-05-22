@@ -12,7 +12,6 @@ struct ListString {
     } *head, *tail;
 };
 
-
 struct Node_s *GetNewNode_s() {
     struct Node_s *newNode = (struct Node_s *) malloc(sizeof(struct Node_s));
 
@@ -20,7 +19,6 @@ struct Node_s *GetNewNode_s() {
     newNode->prev = NULL;
     return newNode;
 };
-
 
 void InsertAtHead_s(struct ListString *list, char *data) {
     struct Node_s *newNode = GetNewNode_s();
@@ -37,7 +35,6 @@ void InsertAtHead_s(struct ListString *list, char *data) {
     newNode->next = list->head;
     list->head = newNode;
 };
-
 
 void PrintAll_s(struct ListString list) {
     printf("Printing from Head...\n");

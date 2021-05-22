@@ -1,8 +1,6 @@
 #include "./h-files/functions.h"
 
-
 int main() {
-
     FILE *file;
     if((file = fopen("txt-files/DataBase.txt", "r")) == NULL)
     {
@@ -72,6 +70,4 @@ int main() {
         int ch = getchar();
         while(getchar() != '\n');
     }
-
 }
-

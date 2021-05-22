@@ -89,7 +89,6 @@ bool addGood(struct ClientList *clientList, struct GoodsList * goodsList){
     return true;
 }
 
-
 bool removeGood(struct ClientList *clientList, struct GoodsList* goodsList){
     int num = PrintAllNames(*clientList);
 
@@ -148,21 +147,9 @@ bool AppendToFile(FILE *file, struct ClientList* clientLiist, struct GoodsList *
     printf("All new Data saved to the file succefully !\n");
 
     return true;
-
 }
 
-
 bool Initialize(FILE *file, struct ClientList* clientList, struct GoodsList * goodsList){
-
-//    if((file = fopen("DataBase.txt", "r")) == NULL)
-//    {
-//        printf("ERROR. File isn't opened\n");
-//        return ;
-//    }
-//    else{
-//        printf("\nFile opened successfully\n");
-//    }
-
     int check = getc(file);
     if (check == EOF){
         printf("No Data to Initialize from file\n"
@@ -217,7 +204,6 @@ bool Initialize(FILE *file, struct ClientList* clientList, struct GoodsList * go
     return true;
 }
 
-
 bool readWord(char *buffer, FILE *file){
     char ch = (char) fgetc(file);
     while(1){
@@ -237,7 +223,6 @@ bool saveWord(FILE *file, char str[]){
     return true;
 }
 
-
 int CalculatePrice(struct GoodsList goodsList){
     int price = 0;
     struct Node_Good* current = goodsList.head;
@@ -253,7 +238,6 @@ int CalculatePrice(struct GoodsList goodsList){
     }
 
     printf("\nThe cost of all stored items: %i $\n\n", price);
-
     return price;
 }
 
@@ -273,7 +257,6 @@ int CalculateMoney(struct GoodsList goodsList){
     }
     return price;
 }
-
 
 int CalcProfit(struct GoodsList goodsList){
     int profit = CalculatePrice(goodsList) - CalculateMoney(goodsList);

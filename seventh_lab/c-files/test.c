@@ -35,14 +35,12 @@ int main()
     assert(DeleteClient(&list, &client) == true);
 
     assert(PrintInfo(client) == true);
-
+////////////////////////////////////////////
     struct Node_Good temp1;
     temp1.next = NULL;
     temp1.prev = NULL;
     temp1.data = NULL;
     assert(NewGood()->data == temp1.data);
-
-    ///////
 
     struct GoodsList list1;
     list1.head = NULL;
