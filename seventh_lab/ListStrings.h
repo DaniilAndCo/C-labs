@@ -30,7 +30,6 @@ void InsertAtHead_s(struct ListString *list, char *data) {
     if (list->head == NULL) {
         list->head = newNode;
         list->tail = newNode;
-
         return;
     }
 

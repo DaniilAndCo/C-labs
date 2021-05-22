@@ -1,17 +1,18 @@
 all: Clean BuildMain BuildTests RunTests
 
 BuildMain:
-	gcc -c main.c ClintList.c GoodsList.c
-	gcc -lm main.o ClintList.o GoodsList.o -o main.exe
+	mkdir -p bin
+	gcc -o bin/main main.c ClintList.c GoodsList.c -lm
 
 BuildTests:
-	gcc test.c ClintList.c GoodsList.c -o test
+	gcc -o bin/test test.c ClintList.c GoodsList.c
 
 RunProgram:
-	./main.exe
+	./bin/main.exe
 
 RunTests:
-	./test.exe
+	./bin/test.exe
 
 Clean: 
-	rm -rf *.exe *.o *.gcda *.gcno
+	rm -rf bin
+	rm -rf *.gcda *.gcno
