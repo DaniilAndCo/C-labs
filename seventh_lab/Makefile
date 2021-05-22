@@ -2,10 +2,10 @@ all: Clean BuildMain BuildTests RunTests
 
 BuildMain:
 	mkdir -p bin
-	gcc -o bin/main main.c ClintList.c GoodsList.c -lm
+	gcc -o bin/main main.c c-files/ClintList.c c-files/GoodsList.c -lm
 
 BuildTests:
-	gcc -o bin/test test.c ClintList.c GoodsList.c
+	gcc -o bin/test c-files/test.c c-files/ClintList.c c-files/GoodsList.c
 
 RunProgram:
 	./bin/main.exe

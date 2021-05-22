@@ -1,4 +1,4 @@
-#include "ClintList.h"
+#include "../h-files/ClintList.h"
 
 struct Node_Client* NewClient(){
     struct Node_Client* newClient = (struct Node_Client*) malloc(sizeof(struct Node_Client));

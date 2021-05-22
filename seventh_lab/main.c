@@ -1,10 +1,10 @@
-#include "functions.h"
+#include "./h-files/functions.h"
 
 
 int main() {
 
     FILE *file;
-    if((file = fopen("DataBase.txt", "r")) == NULL)
+    if((file = fopen("txt-files/DataBase.txt", "r")) == NULL)
     {
         printf("ERROR. File isn't opened\n");
         return 1;

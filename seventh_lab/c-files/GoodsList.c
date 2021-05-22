@@ -1,4 +1,4 @@
-#include "GoodsList.h"
+#include "../h-files/GoodsList.h"
 
 struct Node_Good* NewGood(){
     struct Node_Good* newGood = (struct Node_Good*) malloc(sizeof(struct Node_Good));

@@ -1,6 +1,6 @@
 #include <assert.h>
-#include "ClintList.h"
-#include "GoodsList.h"
+#include "../h-files/ClintList.h"
+#include "../h-files/GoodsList.h"
 #include <string.h>
 
 int main()
