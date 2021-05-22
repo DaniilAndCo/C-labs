@@ -10,5 +10,5 @@ jobs:
         uses: codecov/codecov-action@v1
         with: 
           files: |
-            ./seventh_lab/ClintList.c.gcov
-            ./seventh_lab/GoodsList.c.gcov
+            ./seventh_lab/code-coverage/ClintList.c.gcov
+            ./seventh_lab/code-coverage/GoodsList.c.gcov
